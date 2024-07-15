@@ -25,20 +25,23 @@ vim.opt.modifiable = true
 vim.cmd.colorscheme "catppuccin"
 
 -- universal keybindings
-vim.keymap.set('n', '<C-J>', '<C-W><C-J>') -- split navigations
-vim.keymap.set('n', '<C-K>', '<C-W><C-K>')
-vim.keymap.set('n', '<C-L>', '<C-W><C-L>')
-vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
-vim.keymap.set('n', '<S-Enter>', 'O<Esc>') -- ""shift CR - insert line above and not enter inserted mode
-vim.keymap.set('n', '<CR>', 'o<Esc>') -- "" CR - insert line below and not enter inserted mode
-vim.keymap.set('n', '<Esc>', ':noh<CR><Esc>') --  ""Esc and turnoff highlight
-vim.keymap.set('n', '<C-CR>', 'i<CR><Esc>') --  "" ctl CR - insert cr at current location
-vim.keymap.set('i', '<C-Space>', '<C-n>') --  Ctrl Space to omnicomplete
+local opts = {noremap = true, silent = true}
+vim.keymap.set('n', '<C-J>', '<C-W><C-J>', opts) -- split navigations
+vim.keymap.set('n', '<C-K>', '<C-W><C-K>', opts)
+vim.keymap.set('n', '<C-L>', '<C-W><C-L>', opts)
+vim.keymap.set('n', '<C-H>', '<C-W><C-H>', opts)
+vim.keymap.set('n', '<S-Enter>', 'O<Esc>', opts) -- ""shift CR - insert line above and not enter inserted mode
+vim.keymap.set('n', '<CR>', 'o<Esc>', opts) -- "" CR - insert line below and not enter inserted mode
+vim.keymap.set('n', '<Esc>', ':noh<CR><Esc>', opts) --  ""Esc and turnoff highlight
+vim.keymap.set('n', '<C-J>', 'i<CR><Esc>', opts) --  "" ctl CR - insert cr at current location
+vim.keymap.set('i', '<C-Space>', '<C-x><C-o>', opts) --  Ctrl Space to omnicomplete
 
 require("config.telescope")
-require("config.nvim-lspconfig")
+-- require("config.nvim-lspconfig")
+require("config.lsp-zero")
 require("config.cmp")
 require("config.snip")
 require("config.treesitter")
 require("config.r")
+
 
