@@ -1,6 +1,5 @@
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
---local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 cmp.setup {
   sources = {
@@ -20,5 +19,3 @@ cmp.setup {
     end,
   },
 }
-
-

@@ -3,8 +3,8 @@ require("config.lazy")
 --universal options
 vim.opt.number = true -- Enable line numbers
 vim.opt.relativenumber = true -- Enable relative line numbers
-vim.opt.tabstop = 4 -- Number of spaces a tab represents
-vim.opt.shiftwidth = 4 -- Number of spaces for each indentation
+vim.opt.tabstop = 2 -- Number of spaces a tab represents
+vim.opt.shiftwidth = 2 -- Number of spaces for each indentation
 vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.smartindent = true -- Automatically indent new lines
 vim.opt.smarttab = true -- insert and delet tabs and the begining of a line
@@ -33,15 +33,13 @@ vim.keymap.set('n', '<C-H>', '<C-W><C-H>', opts)
 vim.keymap.set('n', '<S-Enter>', 'O<Esc>', opts) -- ""shift CR - insert line above and not enter inserted mode
 vim.keymap.set('n', '<CR>', 'o<Esc>', opts) -- "" CR - insert line below and not enter inserted mode
 vim.keymap.set('n', '<Esc>', ':noh<CR><Esc>', opts) --  ""Esc and turnoff highlight
-vim.keymap.set('n', '<C-J>', 'i<CR><Esc>', opts) --  "" ctl CR - insert cr at current location
-vim.keymap.set('i', '<C-Space>', '<C-x><C-o>', opts) --  Ctrl Space to omnicomplete
+vim.keymap.set('n', '<leader><CR>', 'i<CR><Esc>', opts) --  "" ctl CR - insert cr at current location
 
 require("config.telescope")
--- require("config.nvim-lspconfig")
+require("config.treesitter")
 require("config.lsp-zero")
 require("config.cmp")
 require("config.snip")
-require("config.treesitter")
 require("config.r")
-
-
+require("config.which-key")
+require("config.conform")
