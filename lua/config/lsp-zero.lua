@@ -10,29 +10,28 @@ require("mason").setup({
     ensure_installed = {
         "stylua",
         "black",
-        --          "debugpy", "mypy", "ruff",
-        -- 			"html-lsp", "css-lsp" , "prettier"
+        "debugpy", 
+        --          "mypy", "ruff", "prettier"
     },
 })
 
 require("mason-lspconfig").setup {
     ensure_installed = {
-        "pyright",
         "lua_ls",
+        "pyright",
         "r_language_server",
-        --          "debugpy", "mypy", "ruff",
-        -- 			"html-lsp", "css-lsp" , "prettier"
+        -- 			"html-lsp", "css-lsp"
     },
     handlers = {
         function(server_name)
             require('lspconfig')[server_name].setup({})
         end,
-        pyright = function()
-            require("lspconfig").pyright.setup {}
-        end,
         lua_ls = function()
             require("lspconfig").lua_ls.setup {}
         end,
+       pyright = function()
+           require("lspconfig").pyright.setup {}
+       end,
         r_language_server = function()
             require("lspconfig").r_language_server.setup {
                 cmd = { "r", "--slave", "-e", "languageserver::run()" },
