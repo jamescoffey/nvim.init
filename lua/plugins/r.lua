@@ -5,21 +5,20 @@ local plugins = {
     filetypes = {"r", "rmd", "quarto"},
     config = function ()
       local opts = {
-        min_editor_width = 72,
-        rconsole_width = 78,
+        R_path = "C:\\Users\\james\\scoop\\shims",
+        pdfviewer = "sumatrapdf",
       }
       require("r").setup(opts)
     end,
   },
-  {
-    "R-nvim/cmp-r",
-    {
-      "hrsh7th/nvim-cmp",
-      config = function()
-            require("cmp").setup({ sources = {{ name = "cmp_r" }}})
-            require("cmp_r").setup({})
-        end,
-    },
-  },
+--  {
+--    "R-nvim/cmp-r",
+--    {
+--      "hrsh7th/nvim-cmp",
+--      config = function()
+--            require("cmp").setup({ sources = {{ name = "cmp_r" }}})
+--        end,
+--    },
+--  },
 }
 return(plugins)
