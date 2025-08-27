@@ -26,7 +26,12 @@ vim.opt.modifiable = true
 
 -- commands
 vim.cmd.colorscheme("catppuccin")
-
+-- autoread changed files
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+	pattern = "*",
+	command = "silent! checktime",
+})
 -- universal keybindings
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<C-J>", "<C-W><C-J>", opts) -- split navigations
