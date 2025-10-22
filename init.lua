@@ -38,10 +38,10 @@ vim.keymap.set("n", "<C-J>", "<C-W><C-J>", opts) -- split navigations
 vim.keymap.set("n", "<C-K>", "<C-W><C-K>", opts)
 vim.keymap.set("n", "<C-L>", "<C-W><C-L>", opts)
 vim.keymap.set("n", "<C-H>", "<C-W><C-H>", opts)
-vim.keymap.set("n", "<S-CR>", "O<Esc>", opts) -- ""shift CR - insert line above and not enter inserted mode
-vim.keymap.set("n", "<CR>", "o<Esc>", opts) -- "" CR - insert line below and not enter inserted mode
 vim.keymap.set("n", "<Esc>", ":noh<CR><Esc>", opts) --  ""Esc and turnoff highlight
-vim.keymap.set("n", "<leader><CR>", "i<CR><Esc>", opts) --  "" ctl CR - insert cr at current location
-vim.keymap.set("n", "<leader>n", "bnext<CR>", opts) -- next buffer
-vim.keymap.set("n", "<leader>p", "bprevious<CR>", opts) -- previous buffer
-vim.keymap.set("n", "<leader>d", "bdelete<CR>", opts) -- delete buffer
+vim.keymap.set("n", "<CR>", "o<Esc>", opts) -- "" CR - insert line be low and not enter inserted mode
+vim.keymap.set("n", "]<CR>", "i<CR><Esc>", opts) --  "" ctl CR - insert cr at current location
+vim.keymap.set("n", "[<CR>", "O<Esc>", opts) --  "" ctl CR - insert cr at current location
+vim.keymap.set("n", "<leader>n", ":bnext<CR>", opts) -- next buffer
+vim.keymap.set("n", "<leader>p", ":bprevious<CR>", opts) -- previous buffer
+vim.keymap.set("n", "<leader>d", ":bdelete<CR>", opts) -- delete buffer

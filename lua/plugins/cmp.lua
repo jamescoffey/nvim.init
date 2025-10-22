@@ -6,15 +6,27 @@ local plugins = {
 			local luasnip = require("luasnip")
 
 			cmp.setup({
-				sources = {
+				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "cmp_r" },
 					{ name = "luasnip" },
 					{ name = "treesitter" },
-					{ name = "buffer" },
-					{ name = "path" },
 					--{ name = "copilot" },
-				},
+					{ name = "buffer" },
+					{
+						name = "path",
+						option = {
+							get_cwd = function()
+								-- Ensure the current working directory is returned correctly
+								return vim.fn.getcwd()
+							end,
+							pathMappings = {
+								["@"] = "${folder}/src",
+								["/"] = vim.fn.getcwd(),
+							},
+						},
+					},
+				}),
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
