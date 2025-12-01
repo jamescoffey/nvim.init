@@ -12,6 +12,10 @@ If (!(Test-Path $file)) {
 }
 (Get-Content $file).replace($find, $replace) | Set-Content $file
 
+git submodule foreach --recursive git reset --hard
+git submodule foreach --recursive git clean -fd
+git submodule update --init --recursive
+
 $env:CHERE_INVOKING = 'yes' # Keep current Directory
 $env:MSYSTEM = 'UCRT64' # https://www.msys2.org/docs/environments/
 C:\msys64\usr\bin\bash -lc 'pacman --noconfirm -Syu'

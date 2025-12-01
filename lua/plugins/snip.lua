@@ -1,9 +1,10 @@
 local plugins = {
 	{
 		"L3MON4D3/LuaSnip",
-		build = "pwsh " .. vim.fn.stdpath("config") .. "/luasnip_jsregexp_build.ps1",
+		version = "v2.*",
+		build = "pwsh -NoProfile -ExecutionPolicy Bypass " .. vim.fn.stdpath("config") .. "/luasnip_jsregexp_build.ps1",
 		config = function()
-			require("luasnip.loaders.from_snipmate").lazy_load()
+			require("luasnip.loaders.from_vscode").lazy_load()
 			--          local ls = require("luasnip")
 			--          vim.keymap.set({"i"}, "<C-k>", function() ls.expand() end, {silent = true})
 			--          vim.keymap.set({"i", "s"}, "<C-l>", function() ls.jump( 1) end, {silent = true})
@@ -18,5 +19,6 @@ local plugins = {
 	},
 	"rafamadriz/friendly-snippets",
 	"saadparwaiz1/cmp_luasnip",
+	"ckunte/latex-snippets-vim",
 }
 return plugins

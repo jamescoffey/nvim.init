@@ -80,6 +80,7 @@ local plugins = {
 	{ "hrsh7th/cmp-path" },
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "hrsh7th/cmp-nvim-lua" },
+	{ "ckunte/latex-snippets-vim" },
 	{
 		"R-nvim/cmp-r",
 		config = function()
@@ -88,11 +89,11 @@ local plugins = {
 			})
 		end,
 	},
-	{
-		"zbirenbaum/copilot-cmp",
-		config = function()
-			require("copilot_cmp").setup()
-		end,
-	},
+	-- {
+	-- 	"zbirenbaum/copilot-cmp",
+	-- 	config = function()
+	-- 		require("copilot_cmp").setup()
+	-- 	end,
+	-- },
 }
 return plugins
