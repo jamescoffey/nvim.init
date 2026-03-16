@@ -8,7 +8,8 @@ vim.opt.shiftwidth = 2 -- Number of spaces for each indentation
 vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.smartindent = true -- Automatically indent new lines
 vim.opt.smarttab = true -- insert and delet tabs and the begining of a line
--- vim.opt.wrap = false -- Disable line wrapping
+vim.opt.wrap = true -- emable line wrapping
+vim.opt.linebreak = true -- Prevent breaking words mid-word
 vim.opt.cursorline = true -- Highlight the current line
 vim.opt.termguicolors = true -- Enable 24-bit RGB colors
 vim.opt.showtabline = 2 -- always show tab line
@@ -40,7 +41,7 @@ vim.keymap.set("n", "<C-J>", "<C-W><C-J>", opts) -- split navigations
 vim.keymap.set("n", "<C-K>", "<C-W><C-K>", opts)
 vim.keymap.set("n", "<C-L>", "<C-W><C-L>", opts)
 vim.keymap.set("n", "<C-H>", "<C-W><C-H>", opts)
-vim.keymap.set("n", "<Esc>", ":noh<CR><Esc>", opts) --  ""Esc and turnoff highlight
+vim.keymap.set("n", "<Esc>", ":noh<CR>:NoiceDismiss<Esc>", opts) --  ""Esc and turnoff highlight and get rid of noice popup
 vim.keymap.set("n", "<CR>", "o<Esc>", opts) -- "" CR - insert line below and not enter inserted mode
 vim.keymap.set("n", "]<CR>", "i<CR><Esc>", opts) --  "" ctl CR - insert cr at current location
 vim.keymap.set("n", "[<CR>", "O<Esc>", opts) --  "" ctl CR - insert cr at current location

@@ -35,5 +35,21 @@ return {
 			desc = "search help",
 			mode = "n",
 		},
+		{
+			"<leader>fs",
+			function()
+				require("telescope.builtin").grep_string()
+			end,
+			desc = "search for string under cursor or selection",
+			mode = { "n", "v" },
+		},
+		{
+			"<leader>fc",
+			function()
+				require("telescope.builtin").commands()
+			end,
+			desc = "Lists available pluggin/user commands",
+			mode = "n",
+		},
 	},
 }

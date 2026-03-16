@@ -19,7 +19,9 @@ local plugins = {
 				"csv",
 				"latex",
 				"bibtex",
-				"rout",
+				"csv",
+
+				-- "rout",
 			},
 			sync_install = true,
 			auto_install = true,

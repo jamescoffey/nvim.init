@@ -6,7 +6,7 @@ local plugins = {
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = "tex",
 			callback = function()
-				vim.opt_local.textwidth = 100 -- Set text wrapping at 80 characters
+				-- vim.opt_local.textwidth = 100 -- Set text wrapping at 80 characters
 				vim.opt_local.colorcolumn = "101"
 				vim.opt_local.formatoptions:append("t") -- Enable automatic text wrapping
 				vim.opt_local.wrap = true -- Enable soft wrapping

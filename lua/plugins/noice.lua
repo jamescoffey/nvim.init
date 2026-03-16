@@ -3,6 +3,7 @@ local plugin = {
 	event = "VeryLazy",
 	opts = {
 		presets = { inc_rename = true },
+		keys = { { "<leader>xx", ":NoiceDismiss<cr>", desc = "Get rid of Noice popup windows", mode = "n" } },
 	},
 	dependencies = {
 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries

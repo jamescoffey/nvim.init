@@ -8,7 +8,7 @@ local plugins = {
 			cmp.setup({
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
-					{ name = "cmp_r" },
+					--{ name = "cmp_r" },
 					{ name = "luasnip" },
 					{ name = "treesitter" },
 					--{ name = "copilot" },
@@ -81,14 +81,14 @@ local plugins = {
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "hrsh7th/cmp-nvim-lua" },
 	{ "ckunte/latex-snippets-vim" },
-	{
-		"R-nvim/cmp-r",
-		config = function()
-			require("cmp_r").setup({
-				filetypes = { "r", "rmd", "rnoweb" },
-			})
-		end,
-	},
+	-- {
+	-- 	"R-nvim/cmp-r",
+	-- 	config = function()
+	-- 		require("cmp_r").setup({
+	-- 			filetypes = { "r", "rmd", "rnoweb" },
+	-- 		})
+	-- 	end,
+	-- },
 	-- {
 	-- 	"zbirenbaum/copilot-cmp",
 	-- 	config = function()

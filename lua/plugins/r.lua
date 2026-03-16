@@ -11,12 +11,12 @@ local plugins = {
 			vim.g.R_bracketed_paste = 1
 		end,
 		config = function()
+			---@type RConfigUserOpts
 			local opts = {
 				R_path = "C:\\Users\\james\\scoop\\shims",
 				pdfviewer = "sumatrapdf",
 				view_df = {
 					csv_sep = ",",
-					--save_fn = "function(x, x_name) {f <- paste0('/tmp/', x_name, '.csv'); readr::write_csv(x, f)}",
 				},
 			}
 			require("r").setup(opts)
