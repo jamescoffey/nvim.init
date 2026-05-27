@@ -1,6 +1,9 @@
 local plugin = {
 	"marcinjahn/gemini-cli.nvim",
-	cmd = "agy",
+	command = "Agy",
+	opts = {
+		gemini_cmd = "agy",
+	},
 	-- Example key mappings for common actions:
 	keys = {
 		{ "<leader>gt", "<cmd>Gemini toggle<cr>", desc = "Toggle Gemini CLI" },
