@@ -16,9 +16,9 @@ local plugins = {
 			local opts = {
 				R_path = "C:\\Users\\james\\scoop\\apps\\r\\current\\bin\\x64",
 				-- pdfviewer = "sumatrapdf",
-				-- view_df = {
-				-- 	csv_sep = ",",
-				-- },
+				view_df = {
+					csv_sep = ",",
+				},
 			}
 			require("r").setup(opts)
 		end,

@@ -1,5 +1,26 @@
 require("config.lazy")
 
+-- Work around a Neovim 0.12-dev LSP save bug where change-tracking state can be
+-- missing when didSave fires for an attached buffer.
+do
+	local changetracking = require("vim.lsp._changetracking")
+	local original_get_and_set_name = changetracking._get_and_set_name
+
+	changetracking._get_and_set_name = function(client, bufnr, name)
+		local ok, result = pcall(original_get_and_set_name, client, bufnr, name)
+		if ok then
+			return result
+		end
+
+		if type(result) == "string" and result:match("buf_state") then
+			changetracking.init(client, bufnr)
+			return original_get_and_set_name(client, bufnr, name)
+		end
+
+		error(result)
+	end
+end
+
 --universal options
 vim.opt.number = true -- Enable line numbers
 vim.opt.relativenumber = true -- Enable relative line numbers

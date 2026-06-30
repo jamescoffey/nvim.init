@@ -28,7 +28,7 @@ local plugins = {
 		},
 		-- Set default options
 		default_forvemat_opts = {
-			lsp_format = "fallback",
+			lsp_format = "never",
 		},
 		-- Set up format-on-save
 		format_on_save = { timeout_ms = 500 },
