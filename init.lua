@@ -38,8 +38,8 @@ vim.opt.shellslash = true -- forward slash is used to expand file names
 vim.opt.hls = true -- highlight search
 vim.opt.is = true -- incramental search
 vim.opt.showcmd = true -- show command you are typing
-vim.opt.mouse = a -- enable mouse support
-vim.opt.clipboard:append({ unnamedplus }) -- default to windows clipboard
+vim.opt.mouse = "a" -- enable mouse support
+vim.opt.clipboard = "unnamedplus" -- default to windows clipboard
 vim.opt.isk:append({ "_", "$", "@", "%", "#", "-" }) -- search keywords
 vim.opt.modifiable = true
 vim.opt.timeoutlen = 500
@@ -69,6 +69,12 @@ vim.keymap.set("n", "[<CR>", "O<Esc>", opts) --  "" ctl CR - insert cr at curren
 vim.keymap.set("n", "<leader>n", ":bnext<CR>", opts) -- next buffer
 vim.keymap.set("n", "<leader>p", ":bprevious<CR>", opts) -- previous buffer
 vim.keymap.set("n", "<leader>dd", ":bdelete<CR>", opts) -- delete buffer
+vim.keymap.set(
+	"n",
+	"<leader>cd",
+	":cd %:p:h<CR>:pwd<CR>",
+	{ noremap = true, silent = true, desc = "Set working directory to directory of file for current buffer" }
+) --
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>bd",
