@@ -21,5 +21,21 @@ local plugin = {
 		words = { enabled = true },
 		lazygit = { enabled = true },
 	},
+	keys = {
+		{
+			"<leader>lg",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Lazygit",
+		},
+		{
+			"<leader>lgl",
+			function()
+				Snacks.lazygit.log()
+			end,
+			desc = "Lazygit Log",
+		},
+	},
 }
 return plugin
