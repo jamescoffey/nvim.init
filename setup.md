@@ -11,7 +11,7 @@ Audit Findings & Dependencies
    - R Environment: R.nvim requires the R language, languageserver, and styler. Note: Your   
       config mentions air for R formatting; this is unusual and likely a typo for styler or a 
       custom tool.
-   - Node.js: Required for pyright (LSP), copilot.lua, and prettier.
+   - Node.js: Required for pyright (LSP), copilot.lua, prettier, and eslint_d.
 
 
 ## Windows 11 (via Scoop)
@@ -106,7 +106,19 @@ sudo Rscript -e "install.packages(c('languageserver', 'styler'), repos='https://
     - **Linux**: `~/.config/nvim`
 2.  Open Neovim: `nvim`
 3.  Lazy.nvim will automatically bootstrap and install plugins.
-4.  Run `:Mason` to verify LSP/Formatter status.
+4.  Run `:Mason` to verify LSP/Formatter/Linter status.
+
+### React projects and ESLint Hooks rules
+For React projects, ESLint must be configured in the project itself with `eslint-plugin-react-hooks`.
+
+Example ESLint rule setup:
+```js
+// eslint.config.js or equivalent
+rules: {
+  "react-hooks/rules-of-hooks": "error",
+  "react-hooks/exhaustive-deps": "warn"
+}
+```
 
 ### Hardcoded Paths Warning
 Note that some plugins (like `R.nvim`) may require manual path adjustments in `lua/plugins/r.lua` if your R installation directory differs from the default.
@@ -117,4 +129,3 @@ For AI features, install the Gemini CLI globally:
 npm install -g @google/gemini-cli
 ```
 Ensure your `GEMINI_API_KEY` is set in your environment variables.
-

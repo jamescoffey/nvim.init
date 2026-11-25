@@ -22,6 +22,7 @@ local plugins = {
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
+			javascriptreact = { "prettier", "prettierd", stop_after_first = true },
 			json = { "prettierd", "prettier", stop_after_first = true },
 			r = { "air" },
 			html = { "prettierd", "prettier" },

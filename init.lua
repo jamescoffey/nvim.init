@@ -81,3 +81,9 @@ vim.api.nvim_set_keymap(
 	":bd | bnext<CR>",
 	{ noremap = true, silent = true, desc = "Close buffer and open next" }
 )
+
+-- Set PowerShell as the default terminal shell
+vim.o.shell = "powershell.exe"
+vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+vim.o.shellquote = ""
+vim.o.shellxquote = ""

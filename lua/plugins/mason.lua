@@ -6,10 +6,10 @@ local plugin = {
         "debugpy",
         "pynvim",
 --        "air",
+        "eslint_d",
         "prettier",
         "prettierd",
       },
     },
   }
 return plugin
-
